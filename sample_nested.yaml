@@ -1,0 +1,9 @@
+---
+- hosts: ubuntu
+  tasks:
+    - name: print nested loop sample one
+      debug:
+        msg: "{{ item[0] }} is looping with {{ item[1] }}"
+      with_nested:
+        - ["sample1", "sample2"]
+        - ["sample3", "sample4"]
